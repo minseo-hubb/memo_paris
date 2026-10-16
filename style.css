@@ -1,5 +1,5 @@
 
-/* 기본 설정 */
+/* 전체 기본 설정 */
 * {
     box-sizing: border-box;
 }
@@ -12,136 +12,240 @@ body {
 
 body {
     background-color: #F4F4F4;
-    color: #111111;
+    color: #111;
     font-family: Arial, "Noto Sans KR", sans-serif;
 }
 
-/* 전체 페이지 */
 .page {
-    width: min(100%, 1100px);
-    min-height: 100vh;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #FFFFFF;
 }
 
 /* 상단 메뉴 */
-.top-bar {
-    min-height: 42px;
-    padding: 16px 18px 0;
+.header {
+    min-height: 38px;
+    padding: 16px 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
-    font-size: 12px;
-}
-
-/* 메뉴 정렬 */
-.navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.navigation a {
-    color: #111111;
-    text-decoration: none;
-}
-
-.navigation a:hover {
-    text-decoration: underline;
-}
-
-/* 계정 및 장바구니 */
-.user-menu {
-    white-space: nowrap;
+    gap: 15px;
     font-size: 11px;
 }
 
-/* Memo Paris 로고 */
+.nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: #111;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.user-menu {
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+/* 상단 로고 */
 .brand {
-    height: 175px;
+    height: 120px;
+    padding: 20px 32px;
     display: flex;
     align-items: center;
-    padding: 24px 32px;
 }
 
 .brand h1 {
     margin: 0;
-    font-size: clamp(30px, 4vw, 42px);
-    line-height: 1.08;
+    font-size: 32px;
     font-weight: 400;
-    letter-spacing: -1.2px;
+    line-height: 1.05;
+    letter-spacing: -1px;
 }
 
-/* 이미지 영역 공통 */
-.image-placeholder {
+/* 이미지 공통 스타일 */
+.placeholder {
+    background-color: #EAEAEA;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #E9E9E9;
-    color: #111111;
-    font-size: 14px;
-}
-
-.image-placeholder span {
     font-size: 12px;
 }
 
-/* 메인 이미지 */
-.hero {
-    height: 490px;
+.placeholder p {
+    margin: 0;
 }
 
-/* 이미지 사이 여백 */
-.white-space {
-    height: 145px;
+.placeholder span {
+    font-size: 11px;
+}
+
+/* 메인 이미지 */
+.main-image {
+    height: 450px;
+}
+
+/* 메인 이미지 아래 여백 */
+.section-space {
+    height: 50px;
     background-color: #FFFFFF;
 }
 
-/* 하단 이미지 2개 */
-.feature-grid {
+/* 콜라보 / 제품 이미지 */
+.two-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.feature {
-    min-height: 480px;
+.collab-image,
+.product-image {
+    height: 330px;
 }
 
-/* 오른쪽 이미지 색상 */
-.feature + .feature {
+.product-image {
     background-color: #E3E3E3;
+}
+
+/* 브랜드 소개 영역 */
+.brand-story {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 80px 30px 0;
+    min-height: 400px;
+}
+
+.story-image {
+    width: 42%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+.story-text {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.story-text h2 {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.story-text p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* 하단 이미지 4열 그리드 */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 0 30px;
+    margin-top: 100px;
+}
+.gallery-image {
+    aspect-ratio: 1 / 1;
+}
+
+/* 하단 로고 */
+.footer {
+    min-height: 250px;
+    padding: 0 30px 25px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
 }
 
 /* 모바일 화면 */
 @media (max-width: 600px) {
-    .top-bar {
-        flex-direction: column;
-        padding: 14px 16px;
+
+    .page {
+        width: 95%;
     }
 
-    .navigation {
-        gap: 9px;
-        font-size: 11px;
+    .header {
+        padding: 12px 12px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        gap: 7px;
+        font-size: 10px;
     }
 
     .brand {
-        height: 145px;
-        padding: 20px;
+        height: 100px;
+        padding: 16px;
     }
 
-    .hero {
-        height: 320px;
+    .brand h1 {
+        font-size: 28px;
     }
 
-    .white-space {
-        height: 90px;
+    .main-image {
+        height: 280px;
     }
 
-    .feature {
-        min-height: 260px;
-        font-size: 12px;
+    .section-space {
+        height: 35px;
+    }
+
+    .collab-image,
+    .product-image {
+        height: 220px;
+    }
+
+    .brand-story {
+        padding: 50px 15px 60px;
+        gap: 15px;
+        min-height: auto;
+    }
+
+    .story-image {
+        width: 48%;
+    }
+
+    .story-text {
+        padding-top: 5px;
+    }
+
+    .story-text p {
+        font-size: 9px;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 0 15px;
+    }
+
+    .footer {
+        min-height: 180px;
+        padding: 0 15px 20px;
+    }
+
+    .footer h2 {
+        font-size: 23px;
     }
 }
