@@ -90,8 +90,10 @@ body {
 }
 
 /* 메인 이미지 */
-.main-image {
-    height: 450px;
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 메인 이미지 아래 여백 */
