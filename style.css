@@ -1,0 +1,147 @@
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F4F4;
+    color: #111111;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+/* 전체 페이지 */
+.page {
+    width: min(100%, 1100px);
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* 상단 메뉴 */
+.top-bar {
+    min-height: 42px;
+    padding: 16px 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 12px;
+}
+
+/* 메뉴 정렬 */
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigation a {
+    color: #111111;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* 계정 및 장바구니 */
+.user-menu {
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+/* Memo Paris 로고 */
+.brand {
+    height: 175px;
+    display: flex;
+    align-items: center;
+    padding: 24px 32px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+}
+
+/* 이미지 영역 공통 */
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #E9E9E9;
+    color: #111111;
+    font-size: 14px;
+}
+
+.image-placeholder span {
+    font-size: 12px;
+}
+
+/* 메인 이미지 */
+.hero {
+    height: 490px;
+}
+
+/* 이미지 사이 여백 */
+.white-space {
+    height: 145px;
+    background-color: #FFFFFF;
+}
+
+/* 하단 이미지 2개 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.feature {
+    min-height: 480px;
+}
+
+/* 오른쪽 이미지 색상 */
+.feature + .feature {
+    background-color: #E3E3E3;
+}
+
+/* 모바일 화면 */
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column;
+        padding: 14px 16px;
+    }
+
+    .navigation {
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .brand {
+        height: 145px;
+        padding: 20px;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .white-space {
+        height: 90px;
+    }
+
+    .feature {
+        min-height: 260px;
+        font-size: 12px;
+    }
+}
